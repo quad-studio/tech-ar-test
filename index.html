@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AR Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- AFRAME + AR.js -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PAINEL DE INTERFACE -->
+    <div id="ui">
+        <button id="btnFocus">Focar</button>
+        <button id="btnReset">Reset</button>
+        <button id="btnInfo">Info</button>
+    </div>
+
+    <!-- PAINEL DE INFO (igual sua Unity) -->
+    <div id="infoPanel">
+        <h2>Informações</h2>
+        <p>Aqui vão os detalhes do equipamento.</p>
+        <button id="btnCloseInfo">Fechar</button>
+    </div>
+
+    <!-- CENA AR -->
+    <a-scene
+    vr-mode-ui="enabled: false"
+    arjs="sourceType: webcam; debugUIEnabled: false;"
+    renderer="antialias: true;">
+
+
+        <!-- Marcador Hiro padrão (podemos trocar depois por imagem da TetraPak) -->
+        <a-marker preset="hiro">
+            <a-entity id="machine"
+                      gltf-model="machine.glb"
+                      scale="0.4 0.4 0.4"
+                      rotation="0 0 0">
+            </a-entity>
+
+            <!-- HOTSPOT (igual Unity) -->
+            <a-sphere id="hotspot" 
+                      position="0 1 0"
+                      radius="0.05"
+                      color="#00aaff"
+                      class="clickable">
+            </a-sphere>
+
+        </a-marker>
+
+        <a-entity camera></a-entity>
+
+    </a-scene>
+
+    <script src="script.js"></script>
+</body>
+</html>
