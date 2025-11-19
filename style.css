@@ -1,0 +1,36 @@
+body, html {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial;
+}
+
+#ui {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+#ui button {
+    padding: 10px 14px;
+    margin-right: 10px;
+    border: none;
+    background: #008CFF;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#infoPanel {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 20px;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    border-radius: 10px;
+    display: none;
+    z-index: 20;
+}
